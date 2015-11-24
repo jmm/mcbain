@@ -9,9 +9,16 @@ function word_regex (word) {
     RegExp("\\b" + word + "\\b");
 }
 
-module.exports = collect_dep;
+module.exports = exports = collect_dep;
 
 function collect_dep (src, opts) {
+  return find(src, opts).strings;
+}
+// collect_dep
+
+exports.find = find;
+
+function find (src, opts) {
   opts = assign({}, opts);
 
   if (typeof src !== "string") src = String(src);
@@ -22,12 +29,9 @@ function collect_dep (src, opts) {
 
   if (! word_regex(word).test(src)) return deps;
 
-  opts.deps = deps;
-
   opts.dep = function (collection, val) {
     deps[collection].push(val);
   };
-
 
   babel.transform(src, {
     plugins: [
@@ -37,6 +41,6 @@ function collect_dep (src, opts) {
     ast: false,
   });
 
-  return opts.deps;
+  return deps;
 }
-// collect_dep
+// find
