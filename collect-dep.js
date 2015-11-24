@@ -45,7 +45,7 @@ function find (src, opts) {
 
   if (typeof src !== "string") src = String(src);
 
-  var deps = opts.deps || Plugin.default_deps({nodes: opts.nodes});
+  var deps = Plugin.default_deps({nodes: opts.nodes});
 
   var word = opts.word === undefined ? Plugin.default_word : opts.word;
 
