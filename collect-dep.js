@@ -23,18 +23,20 @@ function collect_dep (src, opts) {
   if (! word_regex(word).test(src)) return deps;
 
   opts.deps = deps;
-  var plugin = Plugin.make(opts);
+
+  opts.dep = function (collection, val) {
+    deps[collection].push(val);
+  };
+
 
   babel.transform(src, {
     plugins: [
-      plugin
+      [Plugin, opts]
     ],
     code: false,
     ast: false,
-    whitelist: "",
-    modules: "ignore",
   });
 
-  return deps;
+  return opts.deps;
 }
 // collect_dep
