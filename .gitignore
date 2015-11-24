@@ -1,0 +1,3 @@
+node_modules/
+.working/
+babel-plugin-collect-dep/
