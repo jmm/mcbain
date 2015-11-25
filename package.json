@@ -1,11 +1,26 @@
 {
   "private": true,
-  "name": "collect-dep",
-  "version": "0.0.0",
-  "main": "collect-dep.js",
   "dependencies": {
     "babel-core": "^6.0.0",
-    "babel-plugin-collect-dep": "*",
     "object-assign": "^4.0.0"
-  }
+  },
+  "description": "Find `require()` calls and report the dependencies they refer to.",
+  "devDependencies": {
+    "detective": "4.3.1",
+    "tap": "^1.0.0"
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "collect-dep.js",
+    "babel-plugin-collect-dep/package.json",
+    "babel-plugin-collect-dep/collect-dep.js"
+  ],
+  "main": "collect-dep.js",
+  "name": "mcbain",
+  "scripts": {
+    "test": "tap test/test.js $(find test/detective/ -maxdepth 1 -name \"*.js\" ! -name \"parseopts.js\")"
+  },
+  "version": "0.0.0"
 }
