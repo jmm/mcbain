@@ -1,5 +1,6 @@
 {
   "private": true,
+  "author": "Jesse McCarthy (http://software.jessemccarthy.net/)",
   "dependencies": {
     "babel-core": "^6.0.0",
     "object-assign": "^4.0.0"
@@ -17,8 +18,14 @@
     "babel-plugin-collect-dep/package.json",
     "babel-plugin-collect-dep/collect-dep.js"
   ],
+  "homepage": "https://github.com/jmm/mcbain",
+  "license": "MIT",
   "main": "collect-dep.js",
   "name": "mcbain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmm/mcbain.git"
+  },
   "scripts": {
     "test": "tap test/test.js $(find test/detective/ -maxdepth 1 -name \"*.js\" ! -name \"parseopts.js\")"
   },
