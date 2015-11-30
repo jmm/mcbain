@@ -1,7 +1,12 @@
 Find `require()` calls and report the dependencies they refer to.
 
-This is like, and adapted from, [detective](https://www.npmjs.com/package/detective), but conducts its investigation with extreme prejudice (scope awareness). (Note: the scope awareness makes this significantly slower than detective.) That is, when this hits a scope that defines a `require` binding (e.g. as a `var` or a function parameter) it considers `require()` calls in that scope to no longer be the `require()` it's looking for and eliminates them from the output. Example:
-
+This is like, and adapted from,
+[detective](https://www.npmjs.com/package/detective), but conducts its
+investigation with extreme prejudice (scope awareness). (Note: the scope
+awareness makes this significantly slower than detective.) That is, when this
+hits a scope that defines a `require` binding (e.g. as a `var` or a function
+parameter) it considers `require()` calls in that scope to no longer be the
+`require()` it's looking for and eliminates them from the output. Example:
 Input:
 
 ```js
