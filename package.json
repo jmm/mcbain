@@ -31,5 +31,5 @@
   "scripts": {
     "test": "tap test/test.js $(find test/detective/ -maxdepth 1 -name \"*.js\" ! -name \"parseopts.js\")"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
