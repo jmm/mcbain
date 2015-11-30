@@ -6,7 +6,7 @@ but scope aware (though slower).
 var
   assign = require("object-assign"),
   babel = require("babel-core"),
-  Plugin = require("babel-plugin-collect-dep"),
+  plugin = require("babel-plugin-collect-dep"),
   word_regexes = {};
 
 /**
@@ -45,9 +45,9 @@ function find (src, opts) {
 
   if (typeof src !== "string") src = String(src);
 
-  var deps = Plugin.default_deps({nodes: opts.nodes});
+  var deps = plugin.default_deps({nodes: opts.nodes});
 
-  var word = opts.word === undefined ? Plugin.default_word : opts.word;
+  var word = opts.word === undefined ? plugin.default_word : opts.word;
 
   if (! word_regex(word).test(src)) return deps;
 
@@ -62,7 +62,7 @@ function find (src, opts) {
 
   babel.transform(src, {
     plugins: [
-      [Plugin, opts]
+      [plugin, opts]
     ],
     code: false,
     ast: false,
