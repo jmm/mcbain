@@ -6,7 +6,7 @@ but scope aware (though slower).
 var
   assign = require("object-assign"),
   babel = require("babel-core"),
-  Plugin = require("./babel-plugin-collect-dep"),
+  Plugin = require("babel-plugin-collect-dep"),
   word_regexes = {};
 
 /**
