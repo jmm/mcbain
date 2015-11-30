@@ -1,5 +1,4 @@
 {
-  "private": true,
   "author": "Jesse McCarthy (http://software.jessemccarthy.net/)",
   "bundledDependencies": [
     "babel-plugin-collect-dep"
